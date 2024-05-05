@@ -46,7 +46,7 @@ const AddJob = () => {
             // )
             // console.log(data.data)
             toast.success('Job Data Updated Successfully!')
-            navigate('/my-posted-jobs')
+            navigate('/my-post-job')
         } catch (err) {
             console.log(err)
         }

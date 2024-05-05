@@ -47,8 +47,9 @@ export const router = createBrowserRouter([
                 element:<MyBids/>
             },
             {
-                path:'/update-job',
-                element:<UpdateJob/>
+                path:'/update-job/:id',
+                element:<UpdateJob/>,
+                loader: ({params})=> fetch(`${import.meta.env.VITE_URL}/jobs/${params.id}`)
             },
             {
                 path:'/my-post-job',
