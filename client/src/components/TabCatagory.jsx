@@ -8,12 +8,12 @@ const TabCategories = () => {
     const [jobs, setJobs] = useState([])
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`${import.meta.env.VITE_URL}/jobs`)
-            setJobs(data)
+            await axios(`${import.meta.env.VITE_URL}/jobs`)
+            .then(res=> setJobs(res.data))
         }
         getData()
     }, [])
-
+console.log(jobs);
     return (
         <Tabs>
             <div className=' container px-6 py-10 mx-auto'>
